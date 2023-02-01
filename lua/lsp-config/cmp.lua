@@ -19,7 +19,7 @@ local lspkind = require('lspkind')
 cmp.setup({
   snippet = {
     expand = function(args)
-      require('luasnip').lsp_expand(args.body)
+      luasnip.lsp_expand(args.body)
     end
   },
   mapping = {
@@ -52,9 +52,9 @@ cmp.setup({
   },
   sources = {
     {name = 'path'},
-    {name = 'nvim_lsp', keyword_length = 3}, 
-    {name = 'luasnip', keyword_length = 2}, 
-    {name = 'buffer', keyword_length = 3}
+    {name = 'nvim_lsp'},
+    {name = 'luasnip'}, 
+    {name = 'buffer'},
   },
 
   window = {

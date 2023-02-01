@@ -1,4 +1,3 @@
-vim.cmd([[ set hidden ]])
 vim.cmd([[ set number ]])
 vim.cmd([[ set inccommand=split ]])
 vim.cmd([[ set encoding=utf8 ]])
@@ -11,5 +10,4 @@ vim.cmd([[ set softtabstop=2 ]])
 vim.cmd([[ set softtabstop=2 ]])
 vim.cmd([[ set guicursor= ]])
 vim.cmd([[ syntax on]])
-vim.cmd([[colorscheme kanagawa]])
-
+vim.cmd([[colorscheme base16-everforest]])

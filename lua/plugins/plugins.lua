@@ -11,6 +11,7 @@ return require('packer').startup(function()
 	use 'romgrk/barbar.nvim'
 	use 'nvim-lualine/lualine.nvim'
 	use 'nvim-tree/nvim-web-devicons'
+	use { 'michaelb/sniprun', run = 'bash ./install.sh' }
 
 
 	use {
@@ -33,6 +34,7 @@ return require('packer').startup(function()
 			'hrsh7th/cmp-nvim-lsp-signature-help',
 			'petertriho/cmp-git',
 			'onsails/lspkind-nvim',
+			'chrisgrieser/cmp-nerdfont',
 		},
 	}
 

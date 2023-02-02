@@ -139,6 +139,11 @@ _G.packer_plugins = {
     path = "/home/dev_tavs/.local/share/nvim/site/pack/packer/start/git-blame.nvim",
     url = "https://github.com/f-person/git-blame.nvim"
   },
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "/home/dev_tavs/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
+  },
   ["kanagawa.nvim"] = {
     loaded = true,
     path = "/home/dev_tavs/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",

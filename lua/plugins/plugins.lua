@@ -12,8 +12,7 @@ return require('packer').startup(function()
 	use 'nvim-lualine/lualine.nvim'
 	use 'nvim-tree/nvim-web-devicons'
 	use { 'michaelb/sniprun', run = 'bash ./install.sh' }
-
-
+	use 'f-person/git-blame.nvim'
 	use {
 		"windwp/nvim-autopairs",
 		config = function() require("nvim-autopairs").setup {} end

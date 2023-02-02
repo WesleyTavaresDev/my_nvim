@@ -1,3 +1,4 @@
+local gitblame = require('gitblame')
 require('lualine').setup {
 	options = {
 		icons_enabled = true,

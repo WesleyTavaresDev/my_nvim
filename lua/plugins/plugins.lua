@@ -5,6 +5,8 @@ return require('packer').startup(function()
 
 	use 'wbthomason/packer.nvim'
 
+
+	use 'Mofiqul/dracula.nvim'
 	use "rebelot/kanagawa.nvim"
 	use 'RRethy/nvim-base16'
 	use 'OmniSharp/omnisharp-vim'

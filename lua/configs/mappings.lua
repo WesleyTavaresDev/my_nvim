@@ -29,6 +29,16 @@ vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
 vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
 vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
 
+-- CMake
+vim.keymap.set('', '<space>cg', ':CMakeGenerate<cr>', {})
+vim.keymap.set('', '<space>cb', ':CMakeBuild<cr>', {})
+vim.keymap.set('', '<space>cq', ':CMakeClose<cr>', {})
+vim.keymap.set('', '<space>cc', ':CMakeClean<cr>', {})
+
+-- floaterm
+vim.cmd [[let g:floaterm_keymap_toggle = '<F7>']]
+vim.cmd [[let g:floaterm_wintype = 'split']]
+
 --Barbar
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
@@ -69,3 +79,10 @@ map('n', '<Space>bb', '<Cmd>BufferOrderByBufferNumber<CR>', opts)
 map('n', '<Space>bd', '<Cmd>BufferOrderByDirectory<CR>', opts)
 map('n', '<Space>bl', '<Cmd>BufferOrderByLanguage<CR>', opts)
 map('n', '<Space>bw', '<Cmd>BufferOrderByWindowNumber<CR>', opts)
+
+--Navigation
+vim.keymap.set({ 'n', 't' }, '<A-h>', '<CMD>NavigatorLeft<CR>')
+vim.keymap.set({ 'n', 't' }, '<A-l>', '<CMD>NavigatorRight<CR>')
+vim.keymap.set({ 'n', 't' }, '<A-k>', '<CMD>NavigatorUp<CR>')
+vim.keymap.set({ 'n', 't' }, '<A-j>', '<CMD>NavigatorDown<CR>')
+vim.keymap.set({ 'n', 't' }, '<A-p>', '<CMD>NavigatorPrevious<CR>')

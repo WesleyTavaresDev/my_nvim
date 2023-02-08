@@ -4,18 +4,16 @@ return require('packer').startup(function()
 	local use = use;
 
 	use 'wbthomason/packer.nvim'
-
-
 	use 'Mofiqul/dracula.nvim'
 	use "rebelot/kanagawa.nvim"
 	use 'RRethy/nvim-base16'
-	use 'OmniSharp/omnisharp-vim'
 	use 'romgrk/barbar.nvim'
 	use 'nvim-lualine/lualine.nvim'
 	use 'nvim-tree/nvim-web-devicons'
 	use { 'michaelb/sniprun', run = 'bash ./install.sh' }
 	use 'f-person/git-blame.nvim'
-
+	use 'cdelledonne/vim-cmake'
+	use 'voldikss/vim-floaterm'
 	use "lukas-reineke/indent-blankline.nvim"
 
 	use {
@@ -74,5 +72,18 @@ return require('packer').startup(function()
 		'nvim-tree/nvim-tree.lua',
 		tag = 'nightly'
 	}
+
+	--navigation;
+	use {
+		'numToStr/Navigator.nvim',
+		config = function()
+			require('Navigator').setup()
+		end
+	}
+	--tmux
+	use({
+		"aserowy/tmux.nvim",
+		config = function() return require("tmux").setup() end
+	})
 
 end)

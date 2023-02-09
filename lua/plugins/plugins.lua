@@ -15,7 +15,9 @@ return require('packer').startup(function()
 			use 'cdelledonne/vim-cmake'
 			use 'voldikss/vim-floaterm'
 			use 'mfussenegger/nvim-dap'
+
 			use 'rcarriga/cmp-dap'
+			use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
 			use {
 					"windwp/nvim-autopairs",
 					config = function() require("nvim-autopairs").setup {} end

@@ -1,4 +1,5 @@
 local dap = require('dap')
+require('dap-config.dapui');
 dap.adapters.node2 = {
 		type = 'executable',
 		command = 'node',

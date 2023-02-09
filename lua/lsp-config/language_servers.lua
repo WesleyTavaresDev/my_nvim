@@ -1,5 +1,7 @@
 require('mason').setup()
-require('neodev').setup()
+require('neodev').setup({
+		library = { plugins = { "nvim-dap-ui" }, types = true },
+})
 
 local lspconfig = require('lspconfig')
 local lsp_defaults = lspconfig.util.default_config

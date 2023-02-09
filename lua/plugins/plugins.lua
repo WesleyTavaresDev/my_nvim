@@ -14,6 +14,7 @@ return require('packer').startup(function()
 			use 'f-person/git-blame.nvim'
 			use 'cdelledonne/vim-cmake'
 			use 'voldikss/vim-floaterm'
+			use 'mfussenegger/nvim-dap'
 
 			use {
 					"windwp/nvim-autopairs",

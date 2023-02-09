@@ -15,7 +15,7 @@ return require('packer').startup(function()
 			use 'cdelledonne/vim-cmake'
 			use 'voldikss/vim-floaterm'
 			use 'mfussenegger/nvim-dap'
-
+			use 'David-Kunz/jester'
 			use 'rcarriga/cmp-dap'
 			use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
 			use {

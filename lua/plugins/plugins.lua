@@ -3,6 +3,8 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function()
 			local use = use;
 
+			use "rafamadriz/friendly-snippets"
+
 			use 'wbthomason/packer.nvim'
 			use 'Mofiqul/dracula.nvim'
 			use "rebelot/kanagawa.nvim"
@@ -25,6 +27,8 @@ return require('packer').startup(function()
 
 			use { "L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*", run = " make install_jsregexp" }
 
+			-- Lua
+			use "ahmedkhalf/project.nvim"
 			--Autocompletition_nvim_CPM
 			use {
 					'hrsh7th/nvim-cmp',

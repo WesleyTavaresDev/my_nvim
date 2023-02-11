@@ -27,6 +27,12 @@ return require('packer').startup(function()
 
 			use { "L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*", run = " make install_jsregexp" }
 
+			use {
+					'goolord/alpha-nvim',
+					config = function()
+						require 'alpha'.setup(require 'alpha.themes.dashboard'.config)
+					end
+			}
 			-- Lua
 			use "ahmedkhalf/project.nvim"
 			--Autocompletition_nvim_CPM

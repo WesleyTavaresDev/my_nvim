@@ -100,4 +100,11 @@ return require('packer').startup(function()
             "aserowy/tmux.nvim",
             config = function() return require("tmux").setup() end
         })
+
+        use({
+            "iamcco/markdown-preview.nvim",
+            run = "cd app && npm install",
+            setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
+            ft = { "markdown" },
+        })
     end)

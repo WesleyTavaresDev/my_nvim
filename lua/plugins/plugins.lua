@@ -100,11 +100,24 @@ return require('packer').startup(function()
             "aserowy/tmux.nvim",
             config = function() return require("tmux").setup() end
         })
-
+        --markdown
         use({
             "iamcco/markdown-preview.nvim",
             run = "cd app && npm install",
             setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
             ft = { "markdown" },
+        })
+
+        --notification
+        use({
+            "folke/noice.nvim",
+            requires = {
+                -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+                "MunifTanjim/nui.nvim",
+                -- OPTIONAL:
+                --   `nvim-notify` is only needed, if you want to use the notification view.
+                --   If not available, we use `mini` as the fallback
+                "rcarriga/nvim-notify",
+            }
         })
     end)

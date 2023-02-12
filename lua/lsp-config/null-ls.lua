@@ -11,44 +11,61 @@ local conditional = function(fn)
 end
 
 
+
+require('mason-null-ls').setup({
+    ensure_installed = { 'stylua', 'jq' }
+})
+
+require 'mason-null-ls'.setup_handlers {
+    function(source_name, methods)
+        -- all sources with no handler get passed here
+
+        -- To keep the original functionality of `automatic_setup = true`,
+        -- please add the below.
+        require("mason-null-ls.automatic_setup")(source_name, methods)
+    end,
+    stylua = function(source_name, methods)
+        null_ls.register(null_ls.builtins.formatting.stylua)
+    end,
+}
+
 null_ls.setup({
     debug = false,
-
     -- the sources are prettier, eslint_d and rubocop
     sources = {
         formatting.prettier,
 
         -- setting eslint_d only if we have a ".eslintrc.js" file in the project
         diagnostics.eslint_d.with({
-        condition = function(utils)
-            return utils.root_has_file({ '.eslintrc.js' })
-        end
-    }),
+            condition = function(utils)
+                return utils.root_has_file({ '.eslintrc.js' })
+            end
+        }),
 
-    -- Here we set a conditional to call the rubocop formatter. If we have a Gemfile in the project, we call "bundle exec rubocop", if not we only call "rubocop".
-    conditional(function(utils)
-        return utils.root_has_file("Gemfile")
-            and null_ls.builtins.formatting.rubocop.with({
-            command = "bundle",
-            args = vim.list_extend(
-              { "exec", "rubocop" },
-              null_ls.builtins.formatting.rubocop._opts.args
-            ),
-        })
-        or null_ls.builtins.formatting.rubocop
-    end),
+        -- Here we set a conditional to call the rubocop formatter. If we have a Gemfile in the project, we call "bundle exec rubocop", if not we only call "rubocop".
+        conditional(function(utils)
+            return utils.root_has_file("Gemfile")
+                and null_ls.builtins.formatting.rubocop.with({
+                    command = "bundle",
+                    args = vim.list_extend(
+                        { "exec", "rubocop" },
+                        null_ls.builtins.formatting.rubocop._opts.args
+                    ),
+                })
+                or null_ls.builtins.formatting.rubocop
+        end),
 
-    -- Same as above, but with diagnostics.rubocop to make sure we use the proper rubocop version for the project
-    conditional(function(utils)
-        return utils.root_has_file("Gemfile")
+        -- Same as above, but with diagnostics.rubocop to make sure we use the proper rubocop version for the project
+        conditional(function(utils)
+            return utils.root_has_file("Gemfile")
                 and null_ls.builtins.diagnostics.rubocop.with({
-                command = "bundle",
-                args = vim.list_extend(
-                  { "exec", "rubocop" },
-                  null_ls.builtins.diagnostics.rubocop._opts.args
-                ),
-            })
-            or null_ls.builtins.diagnostics.rubocop
+                    command = "bundle",
+                    args = vim.list_extend(
+                        { "exec", "rubocop" },
+                        null_ls.builtins.diagnostics.rubocop._opts.args
+                    ),
+                })
+                or null_ls.builtins.diagnostics.rubocop
         end),
     },
 })

@@ -1,4 +1,4 @@
 # my_nvim
 
 
-<img alt="Alt text" src="~/.config/nvim/nvim.png">
+[![Alt text] (https://github.com/WesleyTavaresDev/my_nvim/blob/main/nvim.png)]

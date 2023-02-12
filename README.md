@@ -1,7 +1,6 @@
 # my_nvim
 
 
- 
-![Nvim] (https://github.com/WesleyTavaresDev/my_nvim/blob/main/nvim.png)
+<img src="https://github.com/WesleyTavaresDev/my_nvim/blob/main/nvim.png">
 
 

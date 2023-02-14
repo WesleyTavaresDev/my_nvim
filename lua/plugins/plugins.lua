@@ -73,6 +73,8 @@ return require("packer").startup(function()
             "folke/neodev.nvim",
             "jose-elias-alvarez/null-ls.nvim",
             "jay-babu/mason-null-ls.nvim",
+            "jay-babu/mason-nvim-dap.nvim",
+
         })
 
         -- Telescope

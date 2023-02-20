@@ -21,6 +21,9 @@ return require("packer").startup(function()
 	use({ "michaelb/sniprun", run = "bash ./install.sh" })
 	use("f-person/git-blame.nvim")
 	use("cdelledonne/vim-cmake")
+
+	--  Buffer line
+	use({ "akinsho/bufferline.nvim", tag = "v3.*", requires = "nvim-tree/nvim-web-devicons" })
 	-- Debug
 	use({
 		"mfussenegger/nvim-dap",
@@ -189,4 +192,7 @@ return require("packer").startup(function()
 	})
 	-- Trouble
 	use("folke/trouble.nvim")
+
+	-- TODO
+	use("folke/todo-comments.nvim")
 end)

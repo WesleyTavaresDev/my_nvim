@@ -3,10 +3,12 @@ vim.cmd([[packadd packer.nvim]])
 return require("packer").startup(function()
 	local use = use
 
+	use("OmniSharp/omnisharp-vim")
 	use("rafamadriz/friendly-snippets")
 	use("lukas-reineke/indent-blankline.nvim")
 	use("wbthomason/packer.nvim")
 	-- themes
+	use("AlexvZyl/nordic.nvim")
 	use("morhetz/gruvbox")
 	use("sainnhe/everforest")
 	use("sainnhe/edge")

@@ -5,7 +5,7 @@ vim.opt.termguicolors = true
 
 local nvim = require("nvim-tree")
 
-nvim.setup {
+nvim.setup({
 	auto_reload_on_write = true,
 	disable_netrw = false,
 	hijack_cursor = false,
@@ -24,7 +24,7 @@ nvim.setup {
 	remove_keymaps = false,
 	select_prompts = false,
 	view = {
-		adaptive_size = false,
+		adaptive_size = true,
 		centralize_selection = false,
 		cursorline = true,
 		debounce_delay = 15,
@@ -51,14 +51,14 @@ nvim.setup {
 	renderer = {
 		add_trailing = false,
 		group_empty = false,
-		highlight_git = false,
+		highlight_git = true,
 		full_name = false,
 		highlight_opened_files = "none",
 		highlight_modified = "none",
 		root_folder_label = ":~:s?$?/..?",
 		indent_width = 2,
 		indent_markers = {
-			enable = false,
+			enable = true,
 			inline_arrows = true,
 			icons = {
 				corner = "└",
@@ -69,7 +69,7 @@ nvim.setup {
 			},
 		},
 		icons = {
-			webdev_colors = true,
+			webdev_colors = false,
 			git_placement = "before",
 			modified_placement = "after",
 			padding = " ",
@@ -115,7 +115,8 @@ nvim.setup {
 		auto_open = true,
 	},
 	update_focused_file = {
-		enable = false,
+		enable = true,
+		update_cwd = false,
 		update_root = false,
 		ignore_list = {},
 	},
@@ -125,7 +126,7 @@ nvim.setup {
 		args = {},
 	},
 	diagnostics = {
-		enable = false,
+		enable = true,
 		show_on_dirs = false,
 		show_on_open_dirs = true,
 		debounce_delay = 50,
@@ -210,7 +211,7 @@ nvim.setup {
 	},
 	tab = {
 		sync = {
-			open = false,
+			open = true,
 			close = false,
 			ignore = {},
 		},
@@ -232,4 +233,4 @@ nvim.setup {
 			watcher = false,
 		},
 	},
-}
+})

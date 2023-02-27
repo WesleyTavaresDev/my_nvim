@@ -197,4 +197,6 @@ return require("packer").startup(function()
 
 	-- TODO
 	use("folke/todo-comments.nvim")
+	use({ "sindrets/diffview.nvim" })
+	use("lukas-reineke/cmp-under-comparator")
 end)

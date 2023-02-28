@@ -96,6 +96,7 @@ require("bufferline").setup({
 	no_name_title = nil,
 })
 
+--]]
 vim.api.nvim_create_autocmd("BufWinEnter", {
 	callback = function(tbl)
 		if vim.bo[tbl.buf].filetype == "NvimTree" then

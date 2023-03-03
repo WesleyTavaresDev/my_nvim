@@ -4,21 +4,23 @@ local lualine = require("lualine")
 -- Color table for highlights
 -- stylua: ignore
 local colors = {
-    bg = '#1E1E2E',
-    fg = '#CDD6F4',
+--    bg = '#1E1E2E',
+--    fg = '#CDD6F4',
+    bg = '#222436',
+    fg = '#c8d3f5',
     yellow = '#F9E2AF',
     cyan = '#94E2D5',
     darkblue = '#081633',
     green = '#A6E3A1',
     orange = '#FF8800',
-    violet = '#a9a1e1',
+    violet = '#444a73',
     magenta = '#F5C2E7',
     blue = '#89B4FA',
     red = '#F38BA8'
 }
 local bubbles_theme = {
 	normal = {
-		a = { fg = colors.black, bg = colors.violet },
+		a = { fg = colors.black, bg = colors.blue },
 		b = { fg = colors.white, bg = colors.grey },
 		c = { fg = colors.black, bg = colors.black },
 	},

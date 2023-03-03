@@ -200,4 +200,11 @@ return require("packer").startup(function()
 	use({ "sindrets/diffview.nvim" })
 	use("lukas-reineke/cmp-under-comparator")
 	use({ "fgheng/winbar.nvim" })
+	use({
+		"vhyrro/neorg",
+		config = function()
+			require("config.neorg").setup()
+		end,
+		requires = "nvim-lua/plenary.nvim",
+	})
 end)
